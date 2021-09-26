@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva Assistant</title>
+    <style>
+        #evaIdleAnim {
+            position: fixed;
+            left: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        #evaTalkAnim {
+            position: fixed;
+            left: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        #startButton{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+            padding: 15px 40px 15px 40px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <video src="./animations/idleAnim.mp4" autoplay muted loop id="evaIdleAnim"></video>
+    <video src="./animations/talkAnim.mp4" autoplay muted loop id="evaTalkAnim" style="display: none;"></video>
+    <button onclick="recognition.start()" id="startButton">start</button>
+    <script src="./script.js"></script>
+</body>
+</html>
