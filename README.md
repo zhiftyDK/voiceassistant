@@ -2,7 +2,7 @@
 Who is Eva
 Eva is a semi ai robot, capable of telling you about anything and playing music.
 In this readme you can learn about how its made and what commands is used.
-![Open Eva Assistant](https://codezhifty.github.io/voiceassistant/)
+[Open Eva Assistant](https://codezhifty.github.io/voiceassistant/)
 <br>
 ### Table of content
 **[Commands](#Commands)**
