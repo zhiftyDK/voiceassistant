@@ -18,7 +18,7 @@ In this readme you can learn about how its made and what commands is used.
 ## Commands
 All command sentences shall include or most preferably start with the engagement command [Eva].
 <br>
-Other commands
+<br>
 * [Eva] + how are you
 * [Eva] + time
 * [Eva] + weather
