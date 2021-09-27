@@ -18,6 +18,16 @@ In this readme you can learn about how its made and what commands is used.
 ## Commands
 All command sentences shall include or most preferably start with the engagement command [Eva].
 <br>
+Other commands
+* [Eva] + how are you
+* [Eva] + time
+* [Eva] + weather
+* [Eva] + good morning or evening or afternoon
+* [Eva] + good night
+* [Eva] + tell me about (query).. The query is anything, this command searches the wikipedia library for knowledge
+* [Eva] + calculate (calculation e.g. 5 + 5)
+* [Eva] + play (song name)
+<br>
 ## Creation of Eva
 I first started using functions like SpeechSynthesis and SpeechRecognition a few years back, and thought i would make an improved version.
 [The old voice assistant](https://codezhifty.github.io/codezhifty/projects/voiceassistant/)
