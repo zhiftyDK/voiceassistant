@@ -27,7 +27,7 @@ All command sentences shall include or most preferably start with the engagement
 * [Eva] + calculate (calculation e.g. 5 + 5)
 * [Eva] + play (song name)
 <br>
-## Creation-of-Eva
+## Creation
 I first started using functions like SpeechSynthesis and SpeechRecognition a few years back, and thought i would make an improved version.
 [The old voice assistant](https://codezhifty.github.io/codezhifty/projects/voiceassistant/)
 <br>
