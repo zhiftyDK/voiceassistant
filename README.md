@@ -19,4 +19,7 @@ In this readme you can learn about how its made and what commands is used.
 All command sentences shall include or most preferably start with the engagement command [Eva].
 <br>
 ## Creation of Eva
-THIS IS THE STORY OF HOW EVA WAS MADE
+I first started using functions like SpeachSynthesis and SpeechRecognition a few years back,
+and thought i would make an improved version.
+[The old voice assistant](https://codezhifty.github.io/codezhifty/projects/voiceassistant/)
+<br>
