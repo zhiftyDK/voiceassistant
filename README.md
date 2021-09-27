@@ -26,6 +26,7 @@ All command sentences shall include or most preferably start with the engagement
 * [Eva] + tell me about (query).. The query is anything, this command searches the wikipedia library for knowledge
 * [Eva] + calculate (calculation e.g. 5 + 5)
 * [Eva] + play (song name)
+<br>
 HELLOo
 <br>
 ## Hello
