@@ -120,13 +120,6 @@ recognition.onresult = function(event) {
                 window.open("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
             })
         }
-        else if(command.includes("ugly")){
-            speak("Shut up you idiot");
-        }
-        else if(command.includes("tidal")){
-            window.open("tidal:")
-            speak("Opening tidal");
-        }
     }
 }
 recognition.onend = function() {
