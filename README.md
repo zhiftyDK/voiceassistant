@@ -27,9 +27,6 @@ All command sentences shall include or most preferably start with the engagement
 * [Eva] + calculate (calculation e.g. 5 + 5)
 * [Eva] + play (song name)
 <br>
-HELLOo
-<br>
-## Hello
 I first started using functions like SpeechSynthesis and SpeechRecognition a few years back, and thought i would make an improved version.
 [The old voice assistant](https://codezhifty.github.io/codezhifty/projects/voiceassistant/)
 <br>
@@ -39,4 +36,4 @@ So i started making the new and improved one. My intention this time was to make
 <br>
 I have used a few different api's in my project, including googles youtube search api, openweathermap api and the wikipedia api. All of these is used to make the chat bot more intelligent.
 <br>
-The wikipedia api is used for gathering intilligence so that the bot can answer most types of factual question.
+The wikipedia api is used for gathering intilligence so that the bot can answer most types of factual questions.

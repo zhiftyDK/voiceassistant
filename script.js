@@ -143,7 +143,7 @@ function speak(input){
 }
 
 function start(){
-    document.getElementById("startButton").style.display = "none";
+    document.getElementById("menu").style.display = "none";
     document.getElementById("title").style.display = "none";
     document.getElementById("evaTalkAnim").style.display = "none";
     document.getElementById("evaIdleAnim").style.display = "block";
