@@ -28,4 +28,3 @@ All command sentences shall include or most preferably start with the engagement
 * [Eva] + play (song name)
 <br>
 ## Creation of Eva
-Hello there my frien
