@@ -1,4 +1,3 @@
-import {GOOGLE_API_KEY, WEATHER_API_KEY} from "./apiKeys.js"
 const synth = window.speechSynthesis;
 const recognition = new webkitSpeechRecognition();
 recognition.onresult = function(event) {
@@ -25,7 +24,7 @@ recognition.onresult = function(event) {
             })
         }
         else if(command.includes("weather")){
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=" + WEATHER_API_KEY)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=f4e80e2071fcae0bd7c122d2f82fd284")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -37,7 +36,7 @@ recognition.onresult = function(event) {
             })
         }
         else if(command.includes("good morning")){
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=" + WEATHER_API_KEY)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=f4e80e2071fcae0bd7c122d2f82fd284")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -54,7 +53,7 @@ recognition.onresult = function(event) {
             })
         }
         else if(command.includes("good evening")){
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=" + WEATHER_API_KEY)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=f4e80e2071fcae0bd7c122d2f82fd284")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -71,7 +70,7 @@ recognition.onresult = function(event) {
             })
         }
         else if(command.includes("good afternoon")){
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=" + WEATHER_API_KEY)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=Silkeborg&units=metric&appid=f4e80e2071fcae0bd7c122d2f82fd284")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -114,7 +113,7 @@ recognition.onresult = function(event) {
         }
         else if(command.includes("play")){
             const query = command.split("play ").pop();
-            fetch("https://www.googleapis.com/youtube/v3/search?key=" + GOOGLE_API_KEY + "&part=snippet&type=video&q=" + query)
+            fetch("https://www.googleapis.com/youtube/v3/search?key=AIzaSyCk4DztX4RNPfT_QPrFoXNlsugabfg78mY&part=snippet&type=video&q=" + query)
             .then(response => response.json())
             .then(data => {
                 speak("Playing " + query)
