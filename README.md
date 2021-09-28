@@ -32,6 +32,7 @@ In this readme you can learn about how its made and what commands is used.
 ## Creation of Eva
 I first learned about functions like speechsynthesis() and speechrecognition(), and with that a made a bad prototype that really didnt reach my expectations.
 [Old Voiceassistant](https://codezhifty.github.io/codezhifty/projects/voiceassistant/)
+<br>
 But now i finally had courage enough to start on another project, which was Eva the assistant.
 <br>
 The main functionallity of Eva is all wrote in javascript, and runs in most native browsers.
