@@ -18,8 +18,6 @@ In this readme you can learn about how its made and what commands is used.
 <br>
 
 ## Commands
-<br>
-
 * how are you
 * time
 * weather
