@@ -17,8 +17,19 @@ recognition.onresult = function(event) {
             .then(response => response.json())
             .then(data => {
                 const dataPageId = Object.getOwnPropertyNames(data.query.pages);
-                console.log(data.query.pages[dataPageId].extract);
-                speak(data.query.pages[dataPageId].extract);
+                if(data.query.pages[dataPageId].extract.endsWith("may refer to:")){
+                    fetch("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=2&explaintext=1&format=json&origin=*&titles=" + formattedQuery[1][1])
+                    .then(response => response.json())
+                    .then(data2 => {
+                        const dataPageId = Object.getOwnPropertyNames(data2.query.pages);
+                        console.log(data2.query.pages[dataPageId].extract);
+                        speak(data2.query.pages[dataPageId].extract);
+                    })
+                }
+                else{
+                    console.log(data.query.pages[dataPageId].extract);
+                    speak(data.query.pages[dataPageId].extract);
+                }
             })
         })
     }
