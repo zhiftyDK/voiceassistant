@@ -48,7 +48,7 @@ recognition.onresult = function(event) {
             minutes = today.getMinutes(),
             weekDay = today.getDay();
             const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            speak("Good morning sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2) + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
+            speak("Good morning sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2).replace(".", "") + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
         })
     }
     else if(command.includes("good evening")){
@@ -65,7 +65,7 @@ recognition.onresult = function(event) {
             minutes = today.getMinutes(),
             weekDay = today.getDay();
             const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            speak("Good evening sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2) + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
+            speak("Good evening sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2).replace(".", "") + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
         })
     }
     else if(command.includes("good afternoon")){
@@ -82,7 +82,7 @@ recognition.onresult = function(event) {
             minutes = today.getMinutes(),
             weekDay = today.getDay();
             const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            speak("Good afternoon sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2) + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
+            speak("Good afternoon sir, the time is" + hours + " " + minutes + ", the weather in " + nameValue + " is " + tempValue.toString().slice(0,2).replace(".", "") + " degrees and " + descValue + ", have a great " + weekDays[weekDay] + " sir");
         })
     }
     else if(command.includes("goodnight") || command.includes("good night")){
@@ -119,12 +119,14 @@ recognition.onresult = function(event) {
             window.open("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
         })
     }
+    else if(command == "stop"){
+        console.log("STOPPING")
+        speechSynthesis.cancel();
+    }
 }
 recognition.onend = function() {
-    setTimeout(() => {
-        console.log("Ended")
-        recognition.start();
-    }, 1000);
+    console.log("Ended")
+    recognition.start();
 }
 
 function speak(input){
