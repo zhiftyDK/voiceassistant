@@ -13,7 +13,7 @@ In this readme you can learn about how its made and what commands is used.
 **[Creation of Eva](#creation-of-eva)**
 <br>
 <br>
-![alt text](https://github.com/CodeZhifty/voiceassistant/blob/main/images/evaassistant.png)
+![alt text](https://github.com/CodeZhifty/voiceassistant/blob/main/images/evaassistant.PNG)
 <br>
 <br>
 
