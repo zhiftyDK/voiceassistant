@@ -24,8 +24,8 @@ In this readme you can learn about how its made and what commands is used.
 * good morning or evening or afternoon
 * good night
 * tell me about (query).. The query is anything, this command searches the wikipedia library for knowledge
-* calculate (calculation e.g. 5 + 5)
 * play (song name)
+* pause / play || mute / unmute
 <br>
 
 ## Creation of Eva
