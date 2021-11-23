@@ -1,9 +1,3 @@
-//Keys & Tokens
-var youtubeapikey = config.YOUTUBE_API_KEY;
-var rapidapikey = config.RAPID_API_KEY;
-var openweathermapapikey = config.OPENWEATHERMAP_API_KEY;
-
-//Speechengine
 const synth = window.speechSynthesis;
 const recognition = new webkitSpeechRecognition();
 recognition.onresult = function(event) {
