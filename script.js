@@ -161,34 +161,27 @@ recognition.onend = function() {
 }
 
 function speak(input){
-    document.getElementById("evaIdleAnim").style.display = "none";
-    document.getElementById("evaTalkAnim").style.display = "block";
+    document.querySelector(".evaVideo").src = "./animations/TalkAnim.mp4";
     const voices = speechSynthesis.getVoices();
     var utterance = new SpeechSynthesisUtterance(input);
     utterance.voice = voices[2];
     speechSynthesis.speak(utterance);
     utterance.onend = function(){
-        document.getElementById("evaTalkAnim").style.display = "none";
-        document.getElementById("evaIdleAnim").style.display = "block";
+        document.querySelector(".evaVideo").src = "./animations/IdleAnim.mp4";
     }
 }
 
 function sleep(input){
     if(input == "true") {
-        document.getElementById("evaIdleAnim").style.display = "none";
+        document.querySelector(".evaIdleAnim").style.display = "none";
     }
     else {
-        document.getElementById("evaIdleAnim").style.display = "block";
+        document.querySelector(".evaIdleAnim").style.display = "block";
     }
 }
 
 function start(){
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("title").style.display = "none";
-    document.getElementById("evaTalkAnim").style.display = "none";
-    document.getElementById("evaIdleAnim").style.display = "block";
-    setTimeout(() => {
-        document.getElementById("evaIdleAnim").style.animation = "none";
-    }, 6000);
+    document.querySelector(".menu").style.display = "none";
+    document.querySelector(".title").style.display = "none";
     recognition.start()
 }

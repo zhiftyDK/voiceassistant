@@ -2,7 +2,7 @@ body{
     background-color: black;
 }
 
-#evaIdleAnim {
+.evaVideo {
     position: fixed;
     left: 50%;
     bottom: 0;
@@ -12,16 +12,7 @@ body{
     animation: videoStartAnimation 6s;
 }
 
-#evaTalkAnim {
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#menu{
+.menu{
     position: absolute;
     left: 50%;
     bottom: 30%;
@@ -29,7 +20,7 @@ body{
     text-align: center;    
 }
 
-#button{
+.button{
     text-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
     font-size: 40px;
     font-family: fantasy;
@@ -37,12 +28,12 @@ body{
     text-decoration: none;
 }
 
-#button:hover{
+.button:hover{
     cursor: pointer;
     color: gray;
 }
 
-#title{
+.title{
     position: absolute;
     left: 50%;
     top: 5%;
