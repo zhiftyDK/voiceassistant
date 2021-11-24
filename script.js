@@ -182,13 +182,13 @@ recognition.onend = function() {
 }
 
 function speak(input){
-    document.querySelector(".evaBot").src = "./animations/TalkAnim.mp4";
+    document.querySelector(".evaBot").src = "https://github.com/CodeZhifty/voiceassistant/blob/main/animations/TalkAnim.mp4?raw=true";
     const voices = speechSynthesis.getVoices();
     var utterance = new SpeechSynthesisUtterance(input);
     utterance.voice = voices[2];
     speechSynthesis.speak(utterance);
     utterance.onend = function(){
-        document.querySelector(".evaBot").src = "./animations/IdleAnim.mp4";
+        document.querySelector(".evaBot").src = "https://github.com/CodeZhifty/voiceassistant/blob/main/animations/idleAnim.mp4?raw=true";
     }
 }
 
