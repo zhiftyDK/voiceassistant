@@ -154,34 +154,95 @@ recognition.onresult = function(event) {
     else if(command == "wake up"){
         sleep("false");
     }
+    else if(command.includes("my location")){
+        navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
+        function success(position){
+            const lon = position.coords.longitude;
+            const lat = position.coords.latitude;
+            toggleMap(lon, lat);
+        }
+        function error(error){
+            console.log(error)
+        }
+        setTimeout(() => {
+            speak("Finding your location sir");
+        }, 3000);
+    }
+    else if(command.includes("london")){
+        toggleMap(-0.127758, 51.507351);
+    }
+    else if(command.includes("close map")){
+        toggleMap();
+    }
 }
+
 recognition.onend = function() {
     console.log("Ended")
     recognition.start();
 }
 
 function speak(input){
-    document.querySelector(".evaVideo").src = "./animations/TalkAnim.mp4";
+    document.querySelector(".evaBot").src = "./animations/TalkAnim.mp4";
     const voices = speechSynthesis.getVoices();
     var utterance = new SpeechSynthesisUtterance(input);
     utterance.voice = voices[2];
     speechSynthesis.speak(utterance);
     utterance.onend = function(){
-        document.querySelector(".evaVideo").src = "./animations/IdleAnim.mp4";
+        document.querySelector(".evaBot").src = "./animations/IdleAnim.mp4";
+    }
+}
+
+function toggleMap(lon, lat){
+    if(map.getSource('dot-point')){
+        map.removeLayer('layer-with-pulsing-dot');
+        map.removeSource('dot-point');
+        map.removeImage('pulsing-dot');
+    }
+    if(document.querySelector(".evaBot").classList.contains("evaVideo") || document.querySelector(".evaBot").classList.contains("evaBigVideo")){
+        document.querySelector(".evaBot").classList.add("evaSmallVideo");
+        document.querySelector(".evaBot").classList.remove("evaVideo");
+        document.querySelector(".evaBot").classList.remove("evaBigVideo");
+        document.querySelector(".mapboxgl-map").classList.remove("mapAnim");
+        setTimeout(() => {
+            document.getElementById("map").style.visibility = "visible";
+            map.jumpTo({
+                center: [
+                    10.5549,
+                    45.1764
+                ],
+                zoom: 2,
+                essential: true
+            });
+            document.querySelector(".mapboxgl-map").classList.add("mapAnim");
+        }, 3000);
+        setTimeout(() => {
+            flyTo(lon, lat)
+        }, 5000);
+    }
+    else if(document.querySelector(".evaBot").classList.contains("evaSmallVideo")){
+        if(lon == null && lat == null) {
+            document.querySelector(".evaBot").classList.add("evaBigVideo");
+            document.querySelector(".evaBot").classList.remove("evaSmallVideo");
+            document.getElementById("map").style.visibility = "hidden";
+        }
+        else {
+            flyTo(lon, lat);
+        }
     }
 }
 
 function sleep(input){
     if(input == "true") {
-        document.querySelector(".evaIdleAnim").style.display = "none";
+        document.querySelector(".evaBot").style.display = "none";
     }
     else {
-        document.querySelector(".evaIdleAnim").style.display = "block";
+        document.querySelector(".evaBot").style.display = "block";
     }
 }
 
 function start(){
     document.querySelector(".menu").style.display = "none";
     document.querySelector(".title").style.display = "none";
+    document.querySelector(".evaBot").style.display = "block";
     recognition.start()
 }

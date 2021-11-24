@@ -1,5 +1,6 @@
-body{
+body {
     background-color: black;
+    overflow: hidden;
 }
 
 .evaVideo {
@@ -12,7 +13,84 @@ body{
     animation: videoStartAnimation 6s;
 }
 
-.menu{
+@keyframes videoStartAnimation {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.evaSmallVideo {
+    position: fixed;
+    left: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+    max-width: 40%;
+    max-height: 100%;
+    animation: videoSmallAnimation 3s;
+}
+
+@keyframes videoSmallAnimation {
+    from{
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+    to{
+        position: fixed;
+        left: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        max-width: 40%;
+        max-height: 100%;
+    }
+}
+
+.evaBigVideo {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    max-width: 100%;
+    max-height: 100%;
+    animation: videoBigAnimation 3s;
+}
+
+@keyframes videoBigAnimation {
+    from{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        transform: translateX(0%);
+        max-width: 40%;
+        max-height: 100%; 
+    }
+    to{
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+#map {
+    position: fixed;
+    left: 40%;
+    bottom: 0;
+    /* top: 50%;
+    transform: translateY(-50%);
+    box-shadow: -1px -1px 47px 29px rgba(43,175,202,0.75);
+    border-radius: 100%; */
+}
+
+.mapAnim {
+    animation: videoStartAnimation 6s;
+}
+
+.menu {
     position: absolute;
     left: 50%;
     bottom: 30%;
@@ -20,7 +98,7 @@ body{
     text-align: center;    
 }
 
-.button{
+.button {
     text-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
     font-size: 40px;
     font-family: fantasy;
@@ -28,12 +106,12 @@ body{
     text-decoration: none;
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
     color: gray;
 }
 
-.title{
+.title {
     position: absolute;
     left: 50%;
     top: 5%;
@@ -44,9 +122,4 @@ body{
     font-size: 100px;
     text-shadow: 7px 7px 15px rgba(0, 255, 255, 1);
     font-family: fantasy;
-}
-
-@keyframes videoStartAnimation {
-    from{opacity: 0;}
-    to{opacity: 1;}
 }
