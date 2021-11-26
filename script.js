@@ -159,17 +159,31 @@ recognition.onresult = function(event) {
         function success(position){
             const lon = position.coords.longitude;
             const lat = position.coords.latitude;
-            toggleMap(lon, lat);
+            fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/" + lon + "," + lat + ".json?proximity=-74.70850,40.78375&access_token=pk.eyJ1IjoiY29kZXpoaWZ0eSIsImEiOiJja3djbWJyZm0xanR3MnFwMnp2cTAyNDBrIn0.QNlyBRhAhJJqX8Yr7tDTfw")
+            .then(response => response.json())
+            .then(data => {
+                const locationTown = data.features[2].place_name;
+                console.log(locationTown);
+                toggleMap(lon, lat);
+                setTimeout(() => {
+                    speak("You are located in " + locationTown);
+                }, 3000);
+            });
         }
         function error(error){
             console.log(error)
         }
-        setTimeout(() => {
-            speak("Finding your location sir");
-        }, 3000);
     }
-    else if(command.includes("london")){
-        toggleMap(-0.127758, 51.507351);
+    else if(command.includes("find ")) {
+        const query = command.split("find ").pop();
+        fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/"+ query + ".json?proximity=-74.70850,40.78375&access_token=pk.eyJ1IjoiY29kZXpoaWZ0eSIsImEiOiJja3djbWJyZm0xanR3MnFwMnp2cTAyNDBrIn0.QNlyBRhAhJJqX8Yr7tDTfw")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.features[1].center);
+            const lon = data.features[1].center[0];
+            const lat = data.features[1].center[1];
+            toggleMap(lon, lat);
+        });
     }
     else if(command.includes("close map")){
         toggleMap();
