@@ -188,6 +188,14 @@ recognition.onresult = function(event) {
     else if(command.includes("close map")){
         toggleMap();
     }
+    else if(command.includes("show me ")){
+        const query = command.split("show me ").pop().replace(" ", "+");
+        fetch("https://api.unsplash.com/search/photos?client_id=8MAfFBgzOMLotDDrdodQCQygJFYpdUOFJwB3qf3OGMM&query=" + query)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.results[0].urls.full);
+        });
+    }
 }
 
 recognition.onend = function() {
